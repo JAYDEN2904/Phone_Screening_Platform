@@ -5,7 +5,6 @@
 
 import Link from 'next/link';
 import { cn } from '@/lib/cn';
-import { clearRecruiterSessionClient } from '@/lib/recruiterSession';
 
 type AppHeaderProps = {
   variant?: 'recruiter' | 'candidate';
@@ -29,19 +28,6 @@ export function AppHeader({ variant = 'recruiter' }: AppHeaderProps) {
             <Link className="hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded" href="/jobs">
               Jobs
             </Link>
-            <button
-              className={cn(
-                'rounded-lg px-4 py-2 text-xs uppercase tracking-[0.2em] ring-2 ring-transparent transition',
-                'text-rose-600 hover:bg-rose-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 dark:text-rose-300 dark:hover:bg-rose-950/40',
-              )}
-              type="button"
-              onClick={() => {
-                clearRecruiterSessionClient();
-                window.location.href = '/';
-              }}
-            >
-              Sign out
-            </button>
           </nav>
         ) : (
           <p className="text-sm font-medium text-emerald-800 dark:text-emerald-200">

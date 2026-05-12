@@ -24,9 +24,10 @@ Open [http://localhost:3000](http://localhost:3000/) — recruiters land on `/jo
 
 ## Data + persistence assumptions
 
-1. Recruitment roles are seeded in `src/data/jobs.ts`; question templates originate from `src/data/questions.ts`.
-2. Each recruiter save appends another `Screening` record so cards can tally historical creations, but recruiter + candidate UIs hydrate the newest snapshot for a job.
-3. Because there is **no backend**, both personas must use the **same browser profile** to observe submissions immediately.
+1. Per the take-home brief: **no authentication** — recruiter pages are treated as an already-authenticated internal tool (no login screen or middleware).
+2. Recruitment roles are seeded in `src/data/jobs.ts`; question templates originate from `src/data/questions.ts`.
+3. Each recruiter save appends another `Screening` record so cards can tally historical creations, but recruiter + candidate UIs hydrate the newest snapshot for a job.
+4. Because there is **no backend**, both personas must use the **same browser profile** to observe submissions immediately.
 
 ## What shipped vs. backlog
 
